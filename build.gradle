@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.3.RELEASE'
+	id 'java'
+	id 'nebula.resolution-rules' version '7.0.10'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+allprojects {
+    apply plugin: 'nebula.resolution-rules'
+}
+
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	resolutionRules 'com.netflix.nebula:gradle-resolution-rules:latest.release'
+}
